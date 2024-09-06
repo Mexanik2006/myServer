@@ -137,6 +137,23 @@ const Download = () => {
             ),
     });
 
+    // const columns = [
+    //     {
+    //         title: 'URL',
+    //         dataIndex: 'url',
+    //         key: 'url',
+    //         width: '40%',
+    //         ...getColumnSearchProps('url'),
+    //     },
+    //     {
+    //         title: 'For',
+    //         dataIndex: 'forurl',
+    //         key: 'forurl',
+    //         width: '30%',
+    //         ...getColumnSearchProps('forurl'),
+    //     },
+    // ];
+
     const columns = [
         {
             title: 'URL',
@@ -144,6 +161,11 @@ const Download = () => {
             key: 'url',
             width: '40%',
             ...getColumnSearchProps('url'),
+            render: (text) => (
+                <a href={text} target="_blank" rel="noopener noreferrer">
+                    {text}
+                </a>
+            ),
         },
         {
             title: 'For',
@@ -154,6 +176,7 @@ const Download = () => {
         },
     ];
 
+
     if (loading) {
         return <Spin tip="Loading..." />;
     }
@@ -162,7 +185,7 @@ const Download = () => {
         return <Alert message="Error" description={error} type="error" showIcon />;
     }
 
-    return <Table columns={columns} dataSource={data} />;
+    return <Table columns={columns} dataSource={data} className='tablecoldown' />;
 };
 
 export default Download;

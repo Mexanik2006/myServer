@@ -26,7 +26,7 @@ function Upload() {
 
     return (
         <div>
-            <div className="m-auto">
+            <div className="uploadpro">
                 <Form
                     name="basic"
                     labelCol={{
@@ -44,6 +44,7 @@ function Upload() {
                     onFinish={onFinish}
                     onFinishFailed={onFinishFailed}
                     autoComplete="off"
+                    className='formbg'
                 >
                     <Form.Item
                         label="Url address"
