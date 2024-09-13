@@ -5,6 +5,8 @@ import { Button } from 'antd';
 import Download from './components/download/Download';
 import { DownloadOutlined, UploadOutlined, HomeOutlined } from '@ant-design/icons';
 import Sidebar from './components/sidebar/Sidebar';
+import UploadImage from './components/upload/UploadImage';
+import DownloadImage from './components/download/DownloadImage';
 function App() {
   return (
     <>
@@ -33,7 +35,9 @@ function App() {
           <div className="links">
         <Routes>
           <Route path='/upload' element={<Upload />} />
+              <Route path='/uploadImage' element={<UploadImage />} />
           <Route path='/download' element={<Download />} />
+              <Route path='/downloadImage' element={<DownloadImage />} />
         </Routes>
           </div>
         </div>

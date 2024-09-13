@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { CloudUploadOutlined, HomeOutlined, CloudDownloadOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
+import { SiAmazonsimpleemailservice } from "react-icons/si";
+import { TbMailDown, TbPhotoDown, TbPhotoPlus } from 'react-icons/tb';
+import { MdOutlineUploadFile } from 'react-icons/md';
+import { LuFileDown } from 'react-icons/lu';
 const items = [
     {
         key: '1',
-        icon: <MailOutlined />,
+        icon: <HomeOutlined />,
         label: 'Home',
         label: <Link to="/">Home</Link>
 
@@ -30,17 +34,26 @@ const items = [
     },
     {
         key: '2',
-        icon: <AppstoreOutlined />,
+        icon: <CloudUploadOutlined />,
         label: 'Upload',
         children: [
             {
                 key: '21',
+                icon: <SiAmazonsimpleemailservice />,
                 label: 'Upload address',
                 label: <Link to="/upload">Upload address</Link>
             },
             {
                 key: '22',
+                icon: <MdOutlineUploadFile />,
+                label: 'Upload file',
+                label: <Link to="/uploadImage">Upload file</Link>
+            },
+            {
+                key: '23',
+                icon: <TbPhotoPlus />,
                 label: 'Upload images',
+                label: <Link to="/uploadImage">Upload image</Link>
             },
             // {
             //     key: '24',
@@ -64,17 +77,26 @@ const items = [
     },
     {
         key: '3',
-        icon: <SettingOutlined />,
+        icon: <CloudDownloadOutlined />,
         label: 'Download',
         children: [
             {
                 key: '31',
+                icon: <TbMailDown />,
                 label: 'Download address',
                 label: <Link to="/download">Download address</Link>
             },
             {
                 key: '32',
+                icon: <LuFileDown />,
+                label: 'Download file',
+                label: <Link to="/downloadImage">Download file</Link>
+            },
+            {
+                key: '33',
+                icon: <TbPhotoDown />,
                 label: 'Download images',
+                label: <Link to="/downloadImage">Download image</Link>
             }
         ],
     },
