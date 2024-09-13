@@ -31,17 +31,9 @@ function UploadImage() {
 
     return (
         <div className='uploadImage'>
-            <Upload {...props} showUploadList={false}>
+            <Upload {...props}>
                 <Button icon={<UploadOutlined />}>Click to Upload</Button>
             </Upload>
-            {imgUrl.length > 0 && (
-                <div>
-                    <h3>Uploaded Images:</h3>
-                    {imgUrl.map((url, index) => (
-                        <img key={index} src={url} alt={`uploaded-${index}`} style={{ width: '100px', marginRight: '10px' }} />
-                    ))}
-                </div>
-            )}
         </div>
     );
 }
