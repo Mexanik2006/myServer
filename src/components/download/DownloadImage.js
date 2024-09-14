@@ -9,7 +9,7 @@ function DownloadImage() {
 
     useEffect(() => {
         const fetchImages = async () => {
-            const imgsRef = ref(imageDB, "files");
+            const imgsRef = ref(imageDB, "images");
             try {
                 const imgs = await listAll(imgsRef);
                 const urls = await Promise.all(

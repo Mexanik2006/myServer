@@ -47,7 +47,7 @@ const items = [
                 key: '22',
                 icon: <MdOutlineUploadFile />,
                 label: 'Upload file',
-                label: <Link to="/uploadImage">Upload file</Link>
+                label: <Link to="/uploadFile">Upload file</Link>
             },
             {
                 key: '23',
@@ -90,7 +90,7 @@ const items = [
                 key: '32',
                 icon: <LuFileDown />,
                 label: 'Download file',
-                label: <Link to="/downloadImage">Download file</Link>
+                label: <Link to="/downloadFile">Download file</Link>
             },
             {
                 key: '33',

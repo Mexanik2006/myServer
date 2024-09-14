@@ -1,17 +1,18 @@
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import React, { useState } from 'react';
 import { imageDB } from '../../firebase/Firebase';
-import { v4 } from 'uuid';
 import { Button, message, Upload, Progress } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
-function UploadImage() {
+function UploadFile() {
     const [imgUrl, setImgUrl] = useState([]);
     const [uploading, setUploading] = useState(false);
     const [progress, setProgress] = useState(0);
 
     const handleUpload = (file) => {
-        const imgRef = ref(imageDB, `images/${v4()}`);
+        // Fayl nomini olish
+        const fileName = file.name;
+        const imgRef = ref(imageDB, `files/${fileName}`);
         const uploadTask = uploadBytesResumable(imgRef, file);
 
         setUploading(true);
@@ -19,7 +20,7 @@ function UploadImage() {
         uploadTask.on(
             'state_changed',
             (snapshot) => {
-                // Calculate progress percentage
+                // Yuklash jarayonidagi progress foizini hisoblash
                 const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                 setProgress(progress);
             },
@@ -33,26 +34,26 @@ function UploadImage() {
                 setImgUrl((prevUrls) => [...prevUrls, url]);
                 message.success(`${file.name} file uploaded successfully`);
                 setUploading(false);
-                setProgress(0); // Reset progress after successful upload
+                setProgress(0); // Yuklash tugagandan so'ng progressni qayta o'rnatish
             }
         );
 
-        // Prevent automatic upload
+        // Avtomatik yuklashni to'xtatish uchun false qaytarish
         return false;
     };
 
     const props = {
         beforeUpload: (file) => {
             handleUpload(file);
-            return false; // Prevent the default behavior
+            return false; // Sukut bo'yicha yuklashni oldini olish
         },
     };
 
     return (
-        <div className='uploadImage'>
+        <div className='uploadFile'>
             <Upload {...props}>
                 <Button icon={<UploadOutlined />} disabled={uploading}>
-                    {uploading ? 'Uploading' : 'Click to Upload'}
+                    {uploading ? 'Uploading' : 'Click to Upload File'}
                 </Button>
             </Upload>
             {uploading && <Progress percent={progress} style={{ marginTop: 16 }} />}
@@ -60,4 +61,4 @@ function UploadImage() {
     );
 }
 
-export default UploadImage;
+export default UploadFile;

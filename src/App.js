@@ -7,6 +7,8 @@ import { DownloadOutlined, UploadOutlined, HomeOutlined } from '@ant-design/icon
 import Sidebar from './components/sidebar/Sidebar';
 import UploadImage from './components/upload/UploadImage';
 import DownloadImage from './components/download/DownloadImage';
+import UploadFile from './components/upload/UploadFile';
+import DownloadFile from './components/download/DownloadFile';
 function App() {
   return (
     <>
@@ -36,8 +38,10 @@ function App() {
         <Routes>
           <Route path='/upload' element={<Upload />} />
               <Route path='/uploadImage' element={<UploadImage />} />
+              <Route path='/uploadFile' element={<UploadFile />} />
           <Route path='/download' element={<Download />} />
               <Route path='/downloadImage' element={<DownloadImage />} />
+              <Route path='/downloadFile' element={<DownloadFile />} />
         </Routes>
           </div>
         </div>

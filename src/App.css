@@ -59,10 +59,25 @@
     max-width: 1100px;
     margin-top: -100px;
 }
+.uploadFile {
+    width: 1100px;
+    /* border: 1px solid red; */
+    margin-top: -90px;
+}
+
+.downfile {
+    max-width: 1100px;
+    height: 500px;
+    overflow: auto;
+}
 @media screen and (max-width: 567px) {
     /* .menusidebar {
         display: none;
-    } */
+    */.uploadFile {
+        width: 1100px;
+        /* border: 1px solid red; */
+        margin: 0;
+    }
 
     /* .uploadpro {
         display: none;
