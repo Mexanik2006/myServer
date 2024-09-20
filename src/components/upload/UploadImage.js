@@ -52,7 +52,7 @@ function UploadImage() {
         <div className='uploadImage'>
             <Upload {...props}>
                 <Button icon={<UploadOutlined />} disabled={uploading}>
-                    {uploading ? 'Uploading' : 'Click to Upload'}
+                    {uploading ? 'Uploading' : 'Click to Upload image'}
                 </Button>
             </Upload>
             {uploading && <Progress percent={progress} style={{ marginTop: 16 }} />}
