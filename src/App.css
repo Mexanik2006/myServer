@@ -125,6 +125,10 @@
         width: 95%;
         height: 100%;
     }
+    .downfile {
+        width: 95%;
+        margin: 10px auto;
+    }
     .downImage {
         width: 95%;
         margin: 10px auto;
