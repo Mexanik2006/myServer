@@ -25,19 +25,13 @@ function Upload() {
     };
 
     return (
-        <div>
+        
             <div className="uploadpro">
                 <Form
                     name="basic"
-                    labelCol={{
-                        span: 8,
-                    }}
-                    wrapperCol={{
-                        span: 16,
-                    }}
-                    style={{
-                        maxWidth: 600,
-                    }}
+                    // style={{
+                    //     maxWidth: 600,
+                    // }}
                     initialValues={{
                         remember: true,
                     }}
@@ -73,10 +67,7 @@ function Upload() {
                     </Form.Item>
 
                     <Form.Item
-                        wrapperCol={{
-                            offset: 8,
-                            span: 16,
-                        }}
+                      
                     >
                         <Button type="primary" htmlType="submit">
                             Send
@@ -84,7 +75,6 @@ function Upload() {
                     </Form.Item>
                 </Form>
             </div>
-        </div>
     )
 }
 

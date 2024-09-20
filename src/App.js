@@ -9,11 +9,13 @@ import UploadImage from './components/upload/UploadImage';
 import DownloadImage from './components/download/DownloadImage';
 import UploadFile from './components/upload/UploadFile';
 import DownloadFile from './components/download/DownloadFile';
+import UploadVideo from './components/upload/UploadVideo';
+import DownloadVideo from './components/download/DownloadVideo';
 function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="text-center mt-[20px] mb-[20px] text-[30px] font-bold ">
+        <div className="text-center mt-[20px] mb-[20px] text-[30px] font-bold main_text">
             <h1>Hello friend this is my private server</h1>
           </div>
         <div className="container">
@@ -39,9 +41,11 @@ function App() {
           <Route path='/upload' element={<Upload />} />
               <Route path='/uploadImage' element={<UploadImage />} />
               <Route path='/uploadFile' element={<UploadFile />} />
+              <Route path='/uploadVideo' element={<UploadVideo />} />
           <Route path='/download' element={<Download />} />
               <Route path='/downloadImage' element={<DownloadImage />} />
               <Route path='/downloadFile' element={<DownloadFile />} />
+              <Route path='/downloadVideo' element={<DownloadVideo />} />
         </Routes>
           </div>
         </div>

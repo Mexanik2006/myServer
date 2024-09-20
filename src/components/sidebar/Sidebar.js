@@ -6,6 +6,7 @@ import { SiAmazonsimpleemailservice } from "react-icons/si";
 import { TbMailDown, TbPhotoDown, TbPhotoPlus } from 'react-icons/tb';
 import { MdOutlineUploadFile } from 'react-icons/md';
 import { LuFileDown } from 'react-icons/lu';
+import { RiVideoDownloadLine, RiVideoUploadLine } from 'react-icons/ri';
 const items = [
     {
         key: '1',
@@ -55,6 +56,12 @@ const items = [
                 label: 'Upload images',
                 label: <Link to="/uploadImage">Upload image</Link>
             },
+            {
+                key: '23',
+                icon: <RiVideoUploadLine />,
+                label: 'Upload images',
+                label: <Link to="/uploadVideo">Upload video</Link>
+            },
             // {
             //     key: '24',
             //     label: 'Submenu 2',
@@ -97,6 +104,12 @@ const items = [
                 icon: <TbPhotoDown />,
                 label: 'Download images',
                 label: <Link to="/downloadImage">Download image</Link>
+            },
+            {
+                key: '33',
+                icon: <RiVideoDownloadLine />,
+                label: 'Download images',
+                label: <Link to="/downloadVideo">Download video</Link>
             }
         ],
     },
