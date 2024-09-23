@@ -129,6 +129,11 @@
         width: 95%;
         margin: 10px auto;
     }
+    .downSel{
+        margin: 10px auto;
+        /* border: 1px solid red; */
+        width: 95%;
+    }
     .downImage {
         width: 95%;
         margin: 10px auto;
